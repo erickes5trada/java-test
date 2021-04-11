@@ -1,5 +1,5 @@
 
-package crud.modelo;
+package modelo;
 
 import java.util.ArrayList;
 

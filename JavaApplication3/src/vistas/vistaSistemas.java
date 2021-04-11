@@ -1,8 +1,8 @@
 
-package crud.vistas;
+package vistas;
 
-import crud.dao.DAOSistemas;
-import crud.modelo.Sistemas;
+import dao.DAOSistemas;
+import modelo.Sistemas;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;

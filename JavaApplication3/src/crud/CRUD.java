@@ -5,6 +5,8 @@
  */
 package crud;
 
+import vistas.vistaSistemas;
+
 /**
  *
  * @author e
@@ -16,6 +18,9 @@ public class CRUD {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        vistas.vistaSistemas vista = new vistaSistemas();
+        vista.setVisible(true);
+        
     }
     
 }

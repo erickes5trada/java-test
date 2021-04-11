@@ -1,5 +1,5 @@
 
-package crud.modelo;
+package modelo;
 
 public class Sistemas {
     private int n_control;

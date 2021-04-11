@@ -1,4 +1,4 @@
-package crud.modelo;
+package modelo;
 
 public class Database {
     String url;
@@ -7,7 +7,7 @@ public class Database {
     String driver;
     
     public Database () {
-    this.url = "jdbc:mysql://localhost:3306/estudiantes";
+    this.url = "jdbc:mysql://192.168.100.12:3306/estudiantes";
     this.usr = "root";
     this.pwd = "";
     this.driver = "com.mysql.jdbc.Driver";
