@@ -56,7 +56,7 @@ public class DAOSistemas implements Operaciones{
        sis = (Sistemas) obj;
         Connection con;
         PreparedStatement pst;
-        String sql = "delete from sistemas where n_control = ?";
+        String sql = "delete from sistemas where n_control=?";
         
         try{
             Class.forName(db.getDriver());
@@ -67,9 +67,6 @@ public class DAOSistemas implements Operaciones{
             );
             pst = con.prepareStatement(sql);
             pst.setInt(1,sis.getN_control());
-            pst.setString(2, sis.getNombre());
-            pst.setString(3,sis.getCarrera());
-            pst.setInt(4,sis.getAnnio_ingreso());
             
             int filas = pst.executeUpdate();
             if(filas > 0){
@@ -91,7 +88,7 @@ public class DAOSistemas implements Operaciones{
                sis = (Sistemas) obj;
         Connection con;
         PreparedStatement pst;
-        String sql = "update sistemas set nombre = ?, carrera = ?, annio_ingreso = ? where n_control = ?";
+        String sql = "update sistemas set nombre=?, carrera=?, annio_ingreso=? where n_control=?";
         
         try{
             Class.forName(db.getDriver());
