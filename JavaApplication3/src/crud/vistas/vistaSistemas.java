@@ -227,14 +227,15 @@ public class vistaSistemas extends javax.swing.JFrame {
         if(dao.modificar(sis)){
             JOptionPane.showMessageDialog(this,"Exito");
         } else{
-            JOptionPane.showMessageDialog(this,"Error al modificar");
+            JOptionPane.showMessageDialog(this,"Error al modificar ");
         }
         cargar();
     }//GEN-LAST:event_btnModificarMouseClicked
 
     private void tblDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDataMouseClicked
         // TODO add your handling code here:
-           this.txtNcontrol.setText(tblData.getValueAt(tblData.getSelectedRow(), 0).toString());
+        this.txtNcontrol.setText(tblData.getValueAt(tblData.getSelectedRow(), 0).toString());
+        this.txtNcontrol.setEnabled(false);
         this.txtNombre.setText(tblData.getValueAt(tblData.getSelectedRow(), 1).toString());
         this.txtCarrera.setText(tblData.getValueAt(tblData.getSelectedRow(), 2).toString());
         this.txtAnnio.setText(tblData.getValueAt(tblData.getSelectedRow(), 3).toString());

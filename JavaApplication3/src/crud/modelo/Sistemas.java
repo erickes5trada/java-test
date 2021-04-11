@@ -2,10 +2,10 @@
 package crud.modelo;
 
 public class Sistemas {
-    int n_control;
-    String nombre;
-    String carrera;
-    int annio_ingreso;
+    private int n_control;
+    private String nombre;
+    private String carrera;
+    private int annio_ingreso;
     
   public Sistemas(){
   }

@@ -32,7 +32,7 @@ public class DAOSistemas implements Operaciones{
             );
             pst = con.prepareStatement(sql);
             pst.setInt(1,sis.getN_control());
-            pst.setString(2, sis.getNombre());
+            pst.setString(2,sis.getNombre());
             pst.setString(3,sis.getCarrera());
             pst.setInt(4,sis.getAnnio_ingreso());
             
@@ -44,7 +44,7 @@ public class DAOSistemas implements Operaciones{
                 con.close();
                 return false;
             }
-        } catch(Exception e){
+        } catch(SQLException | ClassNotFoundException e){
             JOptionPane.showMessageDialog(null,"Ocurrio el siguiente error: "+ e.getMessage());
             return false;
         }
@@ -76,7 +76,7 @@ public class DAOSistemas implements Operaciones{
                 con.close();
                 return false;
             }
-        } catch(Exception e){
+        } catch(SQLException | ClassNotFoundException e){
             JOptionPane.showMessageDialog(null,"Ocurrio el siguiente error: "+ e.getMessage());
             return false;
         }
@@ -98,8 +98,7 @@ public class DAOSistemas implements Operaciones{
                     db.getPwd()
             );
             pst = con.prepareStatement(sql);
-
-            pst.setString(1, sis.getNombre());
+            pst.setString(1,sis.getNombre());
             pst.setString(2,sis.getCarrera());
             pst.setInt(3,sis.getAnnio_ingreso());
             pst.setInt(4,sis.getN_control());
@@ -112,7 +111,7 @@ public class DAOSistemas implements Operaciones{
                 con.close();
                 return false;
             }
-        } catch(Exception e){
+        } catch(SQLException | ClassNotFoundException e){
             JOptionPane.showMessageDialog(null,"Ocurrio el siguiente error: "+ e.getMessage());
             return false;
         }
@@ -144,7 +143,7 @@ public class DAOSistemas implements Operaciones{
                 data.add(fila);
             }
             con.close();
-        }catch(SQLException| ClassNotFoundException e){
+        }catch(SQLException | ClassNotFoundException e){
             JOptionPane.showMessageDialog(null,"Ocurrio este error: "+e.getMessage());
         }finally{
             return data;
