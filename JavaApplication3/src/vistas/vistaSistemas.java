@@ -2,6 +2,7 @@
 package vistas;
 
 import dao.DAOSistemas;
+import java.awt.event.KeyEvent;
 import modelo.Sistemas;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -74,6 +75,12 @@ public class vistaSistemas extends javax.swing.JFrame {
         });
 
         jLabel4.setText("Año de ingreso");
+
+        txtAnnio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAnnioKeyTyped(evt);
+            }
+        });
 
         btnAgregar.setText("AGREGAR");
         btnAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -257,6 +264,22 @@ public class vistaSistemas extends javax.swing.JFrame {
         }
         cargar();
     }//GEN-LAST:event_btnEliminarMouseClicked
+
+    private void txtAnnioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnnioKeyTyped
+        // TODO add your handling code here:
+        int k = (int) evt.getKeyChar();//k = al valor de la tecla presionada    
+        if (k >= 97 && k <= 122 || k >= 65 && k <= 90) {//Si el caracter ingresado es una letra
+            evt.setKeyChar((char) KeyEvent.VK_CLEAR);//Limpiar el caracter ingresado
+            JOptionPane.showMessageDialog(null, "No puede ingresar letras!!!", "Validando Datos",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        if(k >= 32 && k <= 47 || k >= 58 && k <= 64 || k >= 91 && k <= 96){
+                        evt.setKeyChar((char) KeyEvent.VK_CLEAR);//Limpiar el caracter ingresado
+            JOptionPane.showMessageDialog(null, "No puede ingresar simbolos!!!", "Validando Datos",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+          
+    }//GEN-LAST:event_txtAnnioKeyTyped
 
     /**
      * @param args the command line arguments
